@@ -1,0 +1,6 @@
+const campo=document.getElementById('campo'),msg=document.getElementById('mensagem');
+function focarBusca(){campo.focus();campo.scrollIntoView({behavior:'smooth',block:'center'})}
+function mostrar(t){msg.textContent=t}
+function pesquisar(e){e.preventDefault();const q=campo.value.trim().toLowerCase();const cards=[...document.querySelectorAll('.card')];if(!q){msg.textContent='Digite algo para pesquisar.';return}let n=0;cards.forEach(c=>{const ok=c.innerText.toLowerCase().includes(q);c.style.display=ok?'block':'none';if(ok)n++});document.getElementById('biblioteca').scrollIntoView({behavior:'smooth'});msg.textContent=n?`${n} livro(s) encontrado(s).`:`Nenhum livro encontrado para "${campo.value}".`;if(!n)cards.forEach(c=>c.style.display='block')}
+function filtrar(cat){const cards=[...document.querySelectorAll('.card')];let n=0;cards.forEach(c=>{const ok=c.dataset.cat===cat;c.style.display=ok?'block':'none';if(ok)n++});document.getElementById('biblioteca').scrollIntoView({behavior:'smooth'});msg.textContent=`${n} livro(s) na categoria "${cat}".`}
+function abrir(t){msg.textContent=`Você selecionou "${t}". O leitor digital poderá ser adicionado em uma próxima versão.`}

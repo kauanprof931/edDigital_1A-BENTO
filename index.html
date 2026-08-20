@@ -1,25 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administração - Conhecendo o mundo dos Negócios</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livros Mágicos — Biblioteca Online</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Administração - Conhecendo o mundo Empresarial</h1>
-        <p>Meu site para notícias do mundo administrativo.</p>
-    </header>
-    <main>
-        <h2>Sua marca fala com humanos ou com máquinas?</h2>
-        <p>
-            O trabalho criativo que engaja um ser humano não tem correlação mensurável com o modo como um LLM interpreta, ranqueia e recomenda aquela marca.
-            São duas audiências diferentes, com lógicas completamente distintas de processamento, memória e resposta.
-            Esse dado abriu uma conversa que ainda não chegou nas marcas com a seriedade que merece e deveria estar na pauta de toda liderança de marketing.
-        </p>
-    </main>
-</body>
+<header class="topo">
+  <div class="marca"><b>✦</b><div><strong>Livros Mágicos</strong><small>Biblioteca Online</small></div></div>
+  <nav><a href="#inicio">Início</a><a href="#categorias">Categorias</a><a href="#biblioteca">Biblioteca</a><a href="#sobre">Sobre</a></nav>
+  <div class="acoes"><button onclick="focarBusca()">⌕</button><button onclick="mostrar('Menu aberto')">☰</button></div>
+</header>
 
+<main>
+<section id="inicio" class="hero">
+  <div class="hero-texto">
+    <span class="etiqueta">✨ UMA BIBLIOTECA PARA TODOS</span>
+    <h1>Entre em um mundo<br><span>de histórias mágicas</span></h1>
+    <p>Encontre livros, personagens e aventuras para todos os gostos. Explore nossa biblioteca online e descubra sua próxima leitura.</p>
+    <form id="busca" onsubmit="pesquisar(event)">
+      <span>⌕</span><input id="campo" type="search" placeholder="Procure por título, autor ou personagem...">
+      <button>Pesquisar</button>
+    </form>
+    <p id="mensagem" class="mensagem"></p>
+  </div>
+  <div class="ilustracao"><div class="livro">📖</div><i>✦</i><i>✧</i><i>☾</i></div>
+</section>
+
+<section id="categorias" class="secao">
+  <div class="titulo"><div><small>EXPLORE</small><h2>Categorias</h2></div><a href="#biblioteca">Ver todas →</a></div>
+  <div class="categorias">
+    <button onclick="filtrar('Fantasia')">🪄<br>Fantasia</button>
+    <button onclick="filtrar('Aventura')">🗺️<br>Aventura</button>
+    <button onclick="filtrar('Infantil')">🧸<br>Infantil</button>
+    <button onclick="filtrar('Contos')">📜<br>Contos</button>
+    <button onclick="filtrar('Mistério')">🔎<br>Mistério</button>
+    <button onclick="filtrar('Romance')">💌<br>Romance</button>
+  </div>
+</section>
+
+<section id="biblioteca" class="secao">
+  <div class="titulo"><div><small>DESTAQUES</small><h2>Livros mágicos</h2></div><a href="#biblioteca">Ver mais →</a></div>
+  <div id="livros" class="grid">
+    <article class="card" data-cat="Fantasia"><div class="capa c1">O<br>Reino<br>Encantado</div><div class="info"><small>FANTASIA</small><h3>O Reino Encantado</h3><p>Uma aventura por terras mágicas.</p><button onclick="abrir('O Reino Encantado')">Ler livro →</button></div></article>
+    <article class="card" data-cat="Fantasia"><div class="capa c2">A<br>Princesa<br>Perdida</div><div class="info"><small>FANTASIA</small><h3>A Princesa Perdida</h3><p>Uma história cheia de descobertas.</p><button onclick="abrir('A Princesa Perdida')">Ler livro →</button></div></article>
+    <article class="card" data-cat="Aventura"><div class="capa c3">O<br>Mapa<br>Secreto</div><div class="info"><small>AVENTURA</small><h3>O Mapa Secreto</h3><p>Uma busca por um tesouro perdido.</p><button onclick="abrir('O Mapa Secreto')">Ler livro →</button></div></article>
+    <article class="card" data-cat="Infantil"><div class="capa c4">O<br>Pequeno<br>Príncipe</div><div class="info"><small>INFANTIL</small><h3>O Pequeno Príncipe</h3><p>Uma viagem por mundos e amizades.</p><button onclick="abrir('O Pequeno Príncipe')">Ler livro →</button></div></article>
+    <article class="card" data-cat="Contos"><div class="capa c5">Contos<br>de<br>Fadas</div><div class="info"><small>CONTOS</small><h3>Contos de Fadas</h3><p>Histórias clássicas para imaginar.</p><button onclick="abrir('Contos de Fadas')">Ler livro →</button></div></article>
+  </div>
+</section>
+
+<section id="sobre" class="sobre"><div><small>SOBRE A BIBLIOTECA</small><h2>Conhecimento e imaginação em um só lugar.</h2></div><p>O Livros Mágicos é um protótipo de biblioteca digital criado para facilitar a descoberta de novas histórias. Pesquise, explore categorias e encontre sua próxima leitura.</p></section>
+</main>
+
+<footer><div class="marca"><b>✦</b><div><strong>Livros Mágicos</strong><small>Biblioteca Online</small></div></div><span>Feito para quem acredita no poder das histórias ✨</span></footer>
+<script src="script.js"></script>
+</body>
 </html>
